@@ -46,7 +46,7 @@ cd build
 
 # Run CMake configuration
 Write-Host "Configuring project with CMake..."
-cmake .. -DCMAKE_TOOLCHAIN_FILE=../vcpkg/scripts/buildsystems/vcpkg.cmake
+cmake .. "-DCMAKE_TOOLCHAIN_FILE=../vcpkg/scripts/buildsystems/vcpkg.cmake" "-DCMAKE_PREFIX_PATH='C:/Users/M Abbas/F1CarDesigner/vcpkg/installed/x64-windows/share'" "-Dglfw3_DIR='C:/Users/M Abbas/F1CarDesigner/vcpkg/installed/x64-windows/share/glfw3'"
 if ($LASTEXITCODE -ne 0) {
     Write-Error "CMake configuration failed."
     exit 1

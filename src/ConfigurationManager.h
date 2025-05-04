@@ -15,6 +15,8 @@ public:
     static int countDesignFiles(const std::string& path);
     static bool designExists(const std::string& name);
     static void backupDesign(const std::string& filename);
+
+    static void ensureDesignsDirectory(); // Added public static method declaration
 };
 
 #endif

@@ -5,12 +5,14 @@
 
 namespace fs = std::filesystem;
 
-void ensureDesignsDirectory() {
+void ConfigurationManager::ensureDesignsDirectory() {
     const std::string designsPath = "designs";
     if (!fs::exists(designsPath)) {
         try {
             fs::create_directory(designsPath);
+#ifndef _WIN32
             chmod(designsPath.c_str(), 0755); // Set permissions to rwxr-xr-x
+#endif
         } catch (const fs::filesystem_error& e) {
             // Log error but don't throw; handled by callers
         }
